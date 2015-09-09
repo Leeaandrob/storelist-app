@@ -1,0 +1,12 @@
+{
+  "name": "cordova-ionic",
+  "version": "0.0.0",
+  "authors": [
+    "Hadrons <contact@hadrons.io>"
+  ],
+  "license": "Copyright",
+  "dependencies": {
+    "ionic": "~1.1.0",
+    "ngstorage": "~0.3.9"
+  }
+}
