@@ -3,18 +3,21 @@
 var app = angular.module('myFeed', ['ionic', 'angularMoment']);
 
 //Controllers
-app.controller('MainCtrl', function($http, $scope, $ionicSideMenuDelegate){
+app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate){
     $scope.toggleLeft = function() {
       $ionicSideMenuDelegate.toggleLeft();
     };
-    $scope.menus = [];
-    $http.get('https://www.reddit.com/reddits/.json')
-    .success(function(response){
-      angular.forEach(response.data.children, function(child){
-        $scope.menus.push(child.data);
-      });
-      console.log($scope.menus);
-    });
+    $scope.malls = [
+    	{
+		'title': 'Barra Shopping'
+		, 'slug': 'barra'
+    	}
+    	,
+    	{
+		'title': 'Shopping Rio Sul'
+		, 'slug': 'rio_sul'
+    	}
+ 	];
 
 });
 
@@ -24,47 +27,77 @@ app.controller('HomeCtrl', function($http, $scope, $ionicSideMenuDelegate){
     };
 });
 
-app.controller('FeedCtrl', function($http, $scope, $ionicSideMenuDelegate, $stateParams){
-    var displayName = $stateParams.displayName;
-    $scope.infos = {
-        'title': displayName
-    };
-    $scope.items = [];
+app.controller('ShoppingCtrl', function($http, $scope, $ionicSideMenuDelegate, $stateParams){
+    var slug = $stateParams.slug;
 
-    function getContent(params, callback){
-        $http.get('http://www.reddit.com/r/'+ displayName +'/new/.json', {params: params})
-        .success(function(response){
-            var items = [];
-            angular.forEach(response.data.children, function(child){
-                items.push(child.data);
-            });
-            callback(items);
-        });
-    }
-
-    $scope.loadOlder = function() {
-        var params = {};
-        if($scope.items.length > 0){
-            params['after'] = $scope.items[$scope.items.length - 1].name;
-        }
-        getContent(params, function(older){
-            $scope.items = $scope.items.concat(older);
-            $scope.$broadcast('scroll.infiniteScrollComplete');
-        })
+    $scope.mall = {
+        'title': 'Barra Shopping',
+        'slug': slug
     };
 
-    $scope.loadNewer = function() {
-        var params = {'before': $scope.items[0].name};
-        getContent(params, function(newer){
-            $scope.items = newer.concat($scope.items);
-            $scope.$broadcast('scroll.refreshComplete');
-        })
+    $scope.stores = [
+    	{
+	        'name': 'Nokia',
+	        'slug': 'nokia'
+    	},
+    	{
+	        'name': 'Apple',
+	        'slug': 'apple'
+    	},
+    	{
+	        'name': 'Microsoft',
+	        'slug': 'microsoft'
+    	}
+    ];
+
+
+    // function getContent(params, callback){
+    //     $http.get('http://www.reddit.com/r/'+ displayName +'/new/.json', {params: params})
+    //     .success(function(response){
+    //         var items = [];
+    //         angular.forEach(response.data.children, function(child){
+    //             items.push(child.data);
+    //         });
+    //         callback(items);
+    //     });
+    // }
+
+    // $scope.loadOlder = function() {
+    //     var params = {};
+    //     if($scope.items.length > 0){
+    //         params['after'] = $scope.items[$scope.items.length - 1].name;
+    //     }
+    //     getContent(params, function(older){
+    //         $scope.items = $scope.items.concat(older);
+    //         $scope.$broadcast('scroll.infiniteScrollComplete');
+    //     })
+    // };
+
+    // $scope.loadNewer = function() {
+    //     var params = {'before': $scope.items[0].name};
+    //     getContent(params, function(newer){
+    //         $scope.items = newer.concat($scope.items);
+    //         $scope.$broadcast('scroll.refreshComplete');
+    //     })
+    // };
+
+    // $scope.openNew = function(url){
+    //     window.open(url, '_blank', 'location=no;');
+    // };
+
+});
+
+app.controller('StoreCtrl', function($http, $scope, $stateParams, $ionicHistory){
+    var slug = $stateParams.slug;
+
+    $scope.store = {
+        'title': 'Nokia',
+        'slug': slug
     };
 
-    $scope.openNew = function(url){
-        window.open(url, '_blank', 'location=no;');
+    $scope.back = function() {
+      $ionicHistory.goBack();
     };
-
 });
 
 //Routes
@@ -75,12 +108,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
     abstract: true,
     templateUrl: "templates/menu.html"
   })
-  .state('menu.feed', {
-    url: '/feed/{displayName}',
+  .state('menu.shopping', {
+    url: '/shopping/{slug}',
     views:{
       'menuContent': {
-        templateUrl: 'templates/new-feed.html',
-        controller: 'FeedCtrl'
+        templateUrl: 'templates/shopping.html',
+        controller: 'ShoppingCtrl'
       }
     }
   })
@@ -90,6 +123,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
       'menuContent': {
         templateUrl: 'templates/home.html',
         controller: 'HomeCtrl'
+      }
+    }
+  })
+  .state('menu.store', {
+    url: '/store/{slug}',
+    views:{
+      'menuContent': {
+        templateUrl: 'templates/store-detail.html',
+        controller: 'StoreCtrl'
       }
     }
   })

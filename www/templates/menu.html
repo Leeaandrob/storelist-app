@@ -6,7 +6,7 @@
             <a class="item" menu-close href="#/menu/home">
                 Home
             </a>
-            <a collection-repeat="menu in menus" class="item" menu-close href="#/menu/feed/{{menu.display_name}}">
+            <a collection-repeat="menu in malls" class="item" menu-close href="#/menu/shopping/{{menu.slug}}">
                 {{menu.title}}
             </a>
         </ion-list>

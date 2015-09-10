@@ -1,0 +1,20 @@
+<ion-view view-title="{{mall.title}}">
+	<ion-content>
+		<!-- <ion-refresher
+		    pulling-text="Pull to refresh..."
+		    on-refresh="loadNewer()">
+		</ion-refresher> -->
+		<div class="list">
+		    <a collection-repeat="store in stores" class="item" href="#/menu/store/{{store.slug}}">
+		    	<p>
+		    		{{store.name}}
+		    	</p>
+		    </a>
+		</div>
+		<!-- <ion-infinite-scroll
+		    on-infinite="loadOlder()"
+		    distance="1%">
+		</ion-infinite-scroll> -->
+		<ion-nav-view name="detail"></ion-nav-view>
+	</ion-content>
+</ion-view>
