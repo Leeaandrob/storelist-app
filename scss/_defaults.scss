@@ -1,0 +1,55 @@
+//Colors
+$color01: rgba(241,97,34,1);
+$color02: rgba(174,59,26,1);
+$color03: rgba(242,97,34,1);
+$color04: rgba(255,255,255,1);
+$color05: rgba(103,87,65,1);
+$color06: rgba(255,120,0,1);
+$color07: rgba(255,120,0,0.68);
+$color08: rgba(255,120,0,0);
+$color09: rgba(172,125,74,1);
+$color10: rgba(208,73,15,1);
+$color11: rgba(237,88,22,1);
+
+$positive: rgba(241,97,34,1);
+//Header Size
+$headersize: 12%;
+$headersize-menu: 25%;
+
+//Difficulty Level
+$easy: rgba(151,119,91,1);
+$medium: rgba(156,87,37,1);
+$hard: rgba(217,43,3,1);
+
+//Styles
+.rpl { display: inline-block; text-indent: -99999em; overflow: hidden; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+input, 
+label,
+select, 
+option { font-family: "Open Sans", sans-serif; }
+
+[ng\:cloak], 
+[ng-cloak], 
+[data-ng-cloak], 
+[x-ng-cloak],
+.ng-cloak, 
+.x-ng-cloak, 
+.ng-hide, 
+.ng-hide-add,
+.ng-hide-remove { display: none !important; }
+
+.popup-body { text-align: center; }
+.button.button-positive { background-color: $positive !important; border-color: $positive !important; }
+
+.item, 
+fieldset { border: none; }

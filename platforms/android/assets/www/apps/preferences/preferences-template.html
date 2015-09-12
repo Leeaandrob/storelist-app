@@ -1,0 +1,21 @@
+<ion-view class="view-preferences">
+    <ion-nav-bar class="bar-custom">
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-drag" menu-toggle="left">
+            </button>
+        </ion-nav-buttons>
+        <ion-nav-title>My personal data</ion-nav-title>
+        <ion-nav-buttons side="right">
+            <img class="icon-title-right" src="img/ico-main-panel1.png" alt="">
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+            <ion-list class="lvl1 preferences-list">
+                <ion-item ng-repeat="option in preferences" class="item-icon-right preferences-item">
+                    {{ option.name }}
+                    <i ng-click="toggleOption( option.name )" ng-class="{'ion-android-radio-button-on active': option.value, 'ion-android-radio-button-off': !option.value }" class="ion-icon icon"></i>
+                </ion-item>
+            </ion-list>
+            <button class="button button-block preferences-logout" ng-click="logout()">Turn Off</button>
+    </ion-content>
+</ion-view>

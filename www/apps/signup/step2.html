@@ -1,0 +1,25 @@
+<ion-header-bar class="view-signup">
+    <div class="title title-right header-item">Signup</div>
+    <figure class="title-icon"><img src="img/ico-main-person2.png" alt="" /></figure>
+</ion-header-bar>
+<ion-content scroll="true">
+    <div class="wrap-form">
+        <div class="wrap-title">
+            <h2 class="title tmodel1">Step 2</h2>
+            <span class="text">Insert your e-mail and choose a password to create your account.</span>
+        </div>
+        <form class="signup fmodel1" novalidate name="FormSignupStep1" ng-submit="vm.signupStep2()">
+            <label class="item item-input">
+                <span class="input-label">Email</span>
+                <input class="text" type="email" name="email" ng-model="vm.user.email" required />
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input class="text" type="password" name="password" ng-model="vm.user.password" required />
+            </label>
+            <fieldset>
+                <input class="button button-block submit" value="Next" type="submit" />
+            </fieldset>
+        </form>
+    </div>
+</ion-content>

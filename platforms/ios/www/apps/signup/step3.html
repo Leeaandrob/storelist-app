@@ -1,0 +1,46 @@
+<ion-header-bar class="view-signup">
+    <div class="title title-right header-item">Signup</div>
+    <figure class="title-icon"><img src="img/ico-main-person2.png" alt="" /></figure>
+</ion-header-bar>
+
+<ion-content scroll="true">
+    <div class="wrap-form">
+        <div class="wrap-title">
+            <h2 class="title tmodel1">Step 3</h2>
+            <span class="text">Almost done. Just a few more info and you are ready!</span>
+        </div>
+
+        <form class="signup fmodel1" novalidate name="FormSignupStep2" ng-submit="vm.updateStep1()">
+            <label class="item item-input">
+                <span class="input-label">Name</span>
+                <input class="text" type="text" name="name" ng-model="vm.user.name" required />
+            </label>
+
+            <label class="item item-input select-label">
+                <span class="input-label">Gender</span>
+                <select class="select" name="gender" ng-model="vm.user.gender">
+                    <option value=""></option>
+                    <option value="F">Female</option>
+                    <option value="M">Male</option>
+                </select>
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Age</span>
+                <input class="date" type="date" name="age" ng-model="vm.user.age" required />
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label">Peso</span>
+                <input class="text" type="text" name="weight" ng-model="vm.user.weight" required />
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Altura</span>
+                <input class="text" type="text" name="height" ng-model="vm.user.height" required />
+            </label>
+            <fieldset>
+                <input class="button button-block submit" value="Next" type="submit" />
+            </fieldset>
+        </form>
+    </div>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-view name="menuContent" class="bg-gradient"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-stable">
+            <figure>
+                <img ng-hide="(user.picture !== undefined)" src="img/ico-perfil1.png" alt="" ng-cloak />
+                <img ng-show="(user.picture !== undefined)" ng-src="{{ user.picture }}" alt="" ng-cloak />
+            </figure>
+            <h2 class="title">{{ user.name }}</h2>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list class="menu-list">
+                <ion-item menu-close ng-href="#/app/lessons">
+                    <img src="img/ico-main-clipboard1.png" alt=""/> 
+                    <span class="text">Programs</span>
+                </ion-item>
+                <ion-item menu-close ng-href="#/app/lessons">
+                    <img src="img/ico-main-clock1.png" alt=""/> 
+                    <span class="text">Freestyle lessons</span>
+                </ion-item>
+                <!-- <ion-item menu-close ng-href="#/app/preferences">
+                    <img src="img/ico-main-panel1.png" alt=""/> 
+                    <span class="text">Preferências</span>
+                </ion-item> -->
+                <ion-item menu-close ng-href="#/app/preferences">
+                    <img src="img/ico-main-person1.png" alt=""/>
+                    <span class="text">My info</span>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

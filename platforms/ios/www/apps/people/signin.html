@@ -1,0 +1,26 @@
+<ion-content scroll="true" class="view-signin">
+    <h1 class="logo">
+        <img src="img/logo1.png" alt="uFit">
+        <span class="title">Personal Trainer Virtual</span>
+    </h1>
+    <div class="wrap-form">
+        <div class="wrap-title">
+            <h2 class="title tmodel1">Sign-In</h2>
+            <span class="text">Enter with your e-mail and password.</span>
+        </div>
+        <form class="signin fmodel1" novalidate name="SigninData" ng-submit="vm.attemptSignin()">
+            <label class="item item-input">
+                <span class="input-label">Email</span>
+                <input class="text" type="email" name="email" ng-model="vm.user.email" required />
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input class="text" type="password" name="password" ng-model="vm.user.password" required />
+            </label>
+            <fieldset>
+                <input class="button button-block submit" value="Enter" type="submit" />
+            </fieldset>
+        </form>
+        <input class="button signup" value="Sign-Up" type="button" ng-click="vm.goToSignupPage()" />
+    </div>
+</ion-content>

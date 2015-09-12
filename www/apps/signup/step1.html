@@ -1,0 +1,27 @@
+<ion-header-bar class="view-signup">
+	<div class="title title-right header-item">Signup.</div>
+	<figure class="title-icon"><img src="img/ico-main-person2.png" alt="" /></figure>
+</ion-header-bar>
+<ion-content scroll="true">
+	<div class="wrap-form">
+		<div class="wrap-title">
+			<h2 class="title tmodel1">Step 1</h2>
+			<span class="text">Choose the level that best describes your fitness level today.</span>
+		</div>
+		<form class="signup fmodel1" novalidate name="FormSignupStep3" ng-submit="vm.signupStep1()">
+			<label class="item item-input select-label">
+				<span class="input-label">Nível Físico</span>
+				<select class="select" name="activity_level" ng-model="vm.user.activity_level" required>
+					<option value=""></option>
+					<option value="1">Out of shape</option>
+					<option value="2">Average</option>
+					<option value="3">In good shape</option>
+					<option value="4">Athlete</option>
+				</select>
+			</label>
+			<fieldset>
+				<input class="button button-block submit" value="Próximo" type="submit" />
+			</fieldset>
+		</form>
+	</div>
+</ion-content>

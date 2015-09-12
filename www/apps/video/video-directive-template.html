@@ -1,0 +1,29 @@
+<!--<div ng-show="videoEnded" class='video-satisfaction' ng-cloak>-->
+<video 
+    ng-click="pause()"
+    video-ended="finished()"
+    id="{{ videoId }}"
+    src="{{ videoSource | trusted }}"
+    poster="{{ videoPoster }}"
+    autoplay
+    webkit-playsinline></video>
+
+<div id="controls">
+    <div id="play-pause" ng-click="toggleVideoPlay()" ng-class="{ hidden: isVideoPlaying }">
+        <i ng-show="!isVideoPlaying" id="play" class="fa fa-play-circle"></i>
+        <i ng-show="isVideoPlaying" id="pause" class="fa fa-pause"></i>
+    </div>
+    <div class="video-progress-bar" style="display: table; width: 100%;">
+        <i ng-repeat="video in videoLength" class="ion-icon icon ion-android-radio-button-on" style="display: table-cell;"></i>
+    </div>
+</div>
+<div ng-show="isVideoEnded" class='video-modal' ng-cloak>
+    <div class="video-vote">
+        <h2 class="video-vote-title">Como foi este exercício?</h2>
+        <button class="video-vote-button" ng-click="vote(1)">1</button>
+        <button class="video-vote-button" ng-click="vote(2)">2</button>
+        <button class="video-vote-button" ng-click="vote(3)">3</button>
+        <button class="video-vote-button" ng-click="vote(4)">4</button>
+        <button class="video-vote-button" ng-click="vote(5)">5</button>
+    </div>
+</div>

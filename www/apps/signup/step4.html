@@ -1,0 +1,25 @@
+<ion-header-bar class="view-signup">
+    <div class="title title-right header-item">Cadastre-se</div>
+    <figure class="title-icon"><img src="img/ico-main-person2.png" alt="" /></figure>
+</ion-header-bar>
+<ion-content scroll="true">
+    <div class="wrap-form"> 
+        <div class="wrap-title">
+            <h2 class="title tmodel1">Passo 4</h2>
+            <span class="text">Tá quase lá. Só mais umas informações e você tá pronto!</span>
+        </div>
+        <form class="signup fmodel1" novalidate name="FormSignupStep4" ng-submit="vm.updateStep4()">
+            <figure class="thumbnail">
+                <img ng-hide="(vm.user.picture !== undefined)" src="img/thumb-perfil1.png" alt="" ng-cloak />
+                <img ng-show="(vm.user.picture !== undefined)" ng-src="{{ vm.user.picture }}" alt="" ng-cloak />
+            </figure>
+            <label for="" class="item-label file">
+                <span class="input-label">Escolher foto..</span>
+                <input type="file" name="picture" ng-model="vm.user.picture" accept="image/*" file-reader ng-cloak />
+            </label>
+            <fieldset>
+                <input class="button button-block submit" value="Próximo" type="submit" />
+            </fieldset>
+        </form>
+    </div>
+</ion-content>
