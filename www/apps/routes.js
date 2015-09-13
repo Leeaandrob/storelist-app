@@ -10,18 +10,6 @@
                         templateUrl: 'apps/menu/menu-template.html',
                         controller: 'MenuCtrl'
                     })
-
-                    .state('app.lessons', {
-                        url: '/lessons',
-                        cache: false,
-                        views: {
-                            'menuContent': {
-                                templateUrl: 'apps/lessons/lessons-template.html',
-                                controller: 'LessonsCtrl'
-                            }
-                        }
-                    })
-
                     .state('app.stores', {
                         url: '/stores',
                         cache: false,
@@ -31,20 +19,7 @@
                                 controller: 'StoresCtrl'
                             }
                         }
-                    })
-
-
-                    .state('app.lesson', {
-                        url: '/lessons/:lessonId',
-                        cache: false,
-                        views: {
-                            'menuContent': {
-                                templateUrl: 'apps/lessons/lesson-template.html',
-                                controller: 'LessonCtrl'
-                            }
-                        }
-                    })
-
+                    })      
                 $urlRouterProvider
                     .otherwise('/app/stores');
             });

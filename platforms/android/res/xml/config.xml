@@ -1,19 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.hadrons.ufitapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
-    <feature name="YoikScreenOrientation">
-        <param name="android-package" value="net.yoik.cordova.plugins.screenorientation.YoikScreenOrientation" />
-    </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
-    </feature>
-    <feature name="File">
-        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="FileTransfer">
-        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
     </feature>
     <allow-intent href="market:*" />
     <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -34,12 +24,12 @@
     <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
     <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
     <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
-    <name>uFit App</name>
+    <name>storeListApp</name>
     <description>
         Mobile App
     </description>
-    <author email="contact@hadrons.io" href="http://hadrons.io">
-        Hadrons Team
+    <author email="leandrobar93@gmail.com" href="http://leandrobarbosa.info">
+        Leandro Barbosa
     </author>
     <content src="index.html" />
     <access origin="*" />

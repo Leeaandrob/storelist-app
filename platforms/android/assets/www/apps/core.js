@@ -1,23 +1,18 @@
 (function () {
     'use strict';
     angular
-        .module('ufitApp', [
+        .module('storeListApp', [
                 'ionic',
                 'ngStorage',
                 'ngResource',
-                'ScreenOrientation', 
-                'fileReader', 
+                'ScreenOrientation',
+                'fileReader',
                 'app.utils',
-                'app.people',
-                'app.signup',
-                'app.LessonServices',
-                'ufitApp.routes', 
-                'ufitApp.dataStored', 
-                'ufitApp.menu.controller',
-                'ufitApp.preferences.controller',
-                'ufitApp.lessons.controller',
-                'ufitApp.video.controller',
-                'ufitApp.workout.controller'
+                'storeListApp.routes',
+                'storeListApp.dataStored',
+                'storeListApp.menu.controller',
+                'storeListApp.lessons.controller',
+                'storeListApp.stores.controller',
             ])
             .config(function($resourceProvider) {
                 $resourceProvider.defaults.stripTrailingSlashes = false;
@@ -32,7 +27,6 @@
                     };
 
                 $rootScope.baseURL = conf.protocol + conf.URI + (conf.port ? (':' + conf.port) : '') + '/' + conf.version;
-                $rootScope.baseMediaURL = conf.protocol + conf.URI + (conf.port ? (':' + conf.port) : '');
 
                 $ionicPlatform.ready(function() {
                     if (window.cordova && window.cordova.plugins.Keyboard) {

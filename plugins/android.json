@@ -9,30 +9,8 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"YoikScreenOrientation\"><param name=\"android-package\" value=\"net.yoik.cordova.plugins.screenorientation.YoikScreenOrientation\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
-            },
-            "AndroidManifest.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 2
                         }
                     ]
                 }
@@ -40,22 +18,9 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.hadrons.ufitapp"
-        },
-        "cordova-plugin-screen-orientation": {
-            "PACKAGE_NAME": "io.hadrons.ufitapp"
-        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.hadrons.ufitapp"
-        },
-        "org.apache.cordova.file-transfer": {
             "PACKAGE_NAME": "io.hadrons.ufitapp"
         }
     },
-    "dependent_plugins": {
-        "org.apache.cordova.file": {
-            "PACKAGE_NAME": "io.hadrons.ufitapp"
-        }
-    }
+    "dependent_plugins": {}
 }

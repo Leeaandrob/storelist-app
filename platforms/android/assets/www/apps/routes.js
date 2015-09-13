@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular
-        .module('ufitApp.routes', [])
+        .module('storeListApp.routes', [])
             .config(function($stateProvider, $urlRouterProvider) {
                 $stateProvider
                     .state('app', {
@@ -9,16 +9,6 @@
                         abstract: true,
                         templateUrl: 'apps/menu/menu-template.html',
                         controller: 'MenuCtrl'
-                    })
-
-                    .state('app.preferences', {
-                        url: '/preferences',
-                        views: {
-                            'menuContent': {
-                                templateUrl: 'apps/preferences/preferences-template.html',
-                                controller: 'PreferencesCtrl'
-                            }
-                        }
                     })
 
                     .state('app.lessons', {
@@ -32,6 +22,18 @@
                         }
                     })
 
+                    .state('app.stores', {
+                        url: '/stores',
+                        cache: false,
+                        views: {
+                            'menuContent': {
+                                templateUrl: 'apps/stores/stores-template.html',
+                                controller: 'StoresCtrl'
+                            }
+                        }
+                    })
+
+
                     .state('app.lesson', {
                         url: '/lessons/:lessonId',
                         cache: false,
@@ -43,21 +45,7 @@
                         }
                     })
 
-                    .state('app.video', {
-                        url: '/lessons/:lessonId/:videoId',
-                        cache: false,
-                        views: {
-                            'menuContent': {
-                                templateUrl: 'apps/video/video-template.html',
-                                controller: 'VideoCtrl'
-                            }
-                        },
-                        onExit: function(ScreenOrientation) {
-                            console.log('ScreenOrientation');
-                            ScreenOrientation.lockOrientation('portrait');
-                        }
-                    });
                 $urlRouterProvider
-                    .otherwise('/signin');
+                    .otherwise('/app/stores');
             });
 }());

@@ -2,8 +2,7 @@
   "name": "storelist-app",
   "version": "0.0.0",
   "authors": [
-	  Leandro Barbosa <leandrobar93@gmail.com>
-	  Vinicius
+  
   ],
   "license": "Copyright",
   "dependencies": {
