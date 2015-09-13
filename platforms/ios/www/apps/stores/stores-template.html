@@ -1,31 +1,21 @@
-<ion-view class="view-lessons">
-    <ion-nav-bar class="bar-custom">
+<ion-view>
+    <ion-nav-bar class="bar-calm">
         <ion-nav-buttons side="left">
             <button class="button button-icon button-clear ion-drag" menu-toggle="left">
             </button>
         </ion-nav-buttons>
         <ion-nav-title>Stores</ion-nav-title>
-        <ion-nav-buttons side="right">
-            <img class="icon-title-right" src="img/ico-main-clock1.png" alt="">
-        </ion-nav-buttons>
     </ion-nav-bar>
 	<ion-content>
-		<ion-list class="programs-list">
-			<ion-item ng-repeat="store in stores" class="list-item program-0{{ store.id }}">
-				<div style="background-image: url({{store.image}})" class="item-content">
-					<a href="#/app/lessons/{{ store.id }}" >
-						<h2 class="title">{{ store.name }}</h2>
-						<div class="seevideo">
-							<i class="ion-android-arrow-dropright-circle"></i>
-							<span class="text">Go to lesson</span>
-						</div>
-					</a>
+		<ion-list class="list">
+			<div ng-repeat="store in stores" class="card" ng-click="#/app/lessons/{{ store.id }}">
+				<div class="item item-divider">
+					<h2 class="title">{{ store.name }}</h2>
 				</div>
-				<button ng-click="program.showDescription = !program.showDescription" class="showDescription darrow1" ng-class="{ 'active': program.showDescription }">&nbsp;</button>
-				<div ng-show="program.showDescription" class="program-description">
-					<p ng-repeat="activity in store.activities">{{activity}}</p>
+				<div class="item item-text-wrap">
+					<img ng-src="{{store.image}}" alt="">
 				</div>
-			</ion-item>
+			</div>
         </ion-list>
     </ion-content>
 </ion-view>

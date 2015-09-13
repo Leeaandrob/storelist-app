@@ -11,7 +11,6 @@
                 'storeListApp.routes',
                 'storeListApp.dataStored',
                 'storeListApp.menu.controller',
-                'storeListApp.lessons.controller',
                 'storeListApp.stores.controller',
             ])
             .config(function($resourceProvider) {
