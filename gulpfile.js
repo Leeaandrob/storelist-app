@@ -6,7 +6,7 @@ var rename = require('gulp-rename');
 var connect = require('gulp-connect');
 
 var paths = {
-    sass: ['./scss/**/*.scss'],
+    sass: ['./scss/**/*'],
     www: ['./www/**/*', '!./www/lib/']
 };
 
