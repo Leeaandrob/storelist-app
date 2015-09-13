@@ -39,7 +39,7 @@ gulp.task('connect', function () {
     connect.server({
         root: 'www',
         port: 8080,
-        host: '192.168.3.102',
+        host: 'localhost',
         livereload: true
     });
 });
