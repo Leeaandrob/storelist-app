@@ -8,6 +8,7 @@
                 'ScreenOrientation',
                 'fileReader',
                 'app.utils',
+				'app.stores.StoresServices',
                 'storeListApp.routes',
                 'storeListApp.dataStored',
                 'storeListApp.menu.controller',
@@ -19,10 +20,10 @@
             .run(function($ionicPlatform, $rootScope) {
                 var conf = {
                         protocol: 'http:',
-                        //URI: '//ufitapp.com',
-                        URI: '//localhost',
-                        port: '8000',
-                        version: 'v1'
+                        URI: '//storelist.leandrobarbosa.info',
+                        //URI: '//localhost',
+                        //port: '8000',
+                        version: 'api/v1'
                     };
 
                 $rootScope.baseURL = conf.protocol + conf.URI + (conf.port ? (':' + conf.port) : '') + '/' + conf.version;

@@ -6,35 +6,36 @@
         </ion-nav-buttons>
         <ion-nav-title>Stores</ion-nav-title>
     </ion-nav-bar>
+
 	<ion-content>
 		<ion-list class="list">
-			<div ng-repeat="store in stores" class="card" ng-click="#/app/store/{{ store.id }}">
-				<div class="item-image">
-					<img ng-src="{{store.image}}" alt="">
-				</div>
-				<div class="item item-divider">
+			<div class="item item-divider">
+				<ion-item ng-repeat="store in allStores" class=card">
+					<div class="item-image">
+						<img ng-src="{{store.imagem}}" alt="">
+					</div>
 					<div class="row">
 						<div class="col">
 							<h2 class="title">{{ store.name }}</h2>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col">
-							<ul class="list-atividades">
-								<li><i class="icon ion-pricetag"></i></li>
-								<li ng-repeat="activity in store.activities"><p>{{activity}}</p></li>
-							</ul>
+						<div class="row">
+							<div class="col">
+								<ul class="list-atividades">
+									<li><i class="icon ion-pricetag"></i></li>
+									<li ng-repeat="activity in store.activities"><p>{{activity}}</p></li>
+								</ul>
+							</div>
+							<div class="col">
+								<ul class="list-atividades">
+									<li><i class="icon ion-android-pin"></i></li>
+									<li><p>Loja: {{store.local}}</p></li>
+								</ul>
+							</div>
 						</div>
-						<div class="col">
-							<ul class="list-atividades">
-								<li><i class="icon ion-android-pin"></i></li>
-								<li><p>Loja: {{store.store}}</p></li>
-							</ul>
-						</div>
 					</div>
-					
 				</div>
-			</div>
-        </ion-list>
-    </ion-content>
+
+			</ion-item>
+		</ion-list>
+	</ion-content>
 </ion-view>

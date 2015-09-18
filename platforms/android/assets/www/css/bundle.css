@@ -9286,3 +9286,10 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.list-atividades li {
+  float: left;
+  margin-left: 5px; }
+
+.list-atividades li:first-child {
+  margin-left: 0; }
